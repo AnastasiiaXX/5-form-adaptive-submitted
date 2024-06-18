@@ -1,8 +1,8 @@
 document.querySelectorAll('input, textarea').forEach((input) => {
-  input.addEventListener('input', validateForm);
+  input.addEventListener('input', () => validateForm());
 });
 
-function validateForm() {
+const validateForm = () => {
   const firstName = document.getElementById('first-name').value;
   const lastName = document.getElementById('last-name').value;
   const email = document.getElementById('email').value;
@@ -44,19 +44,19 @@ function validateForm() {
   }
 
   formButton.disabled = !isFormValid;
-}
+};
 
-function validateEmail(email) {
+const validateEmail = (email) => {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(String(email).toLowerCase());
-}
+};
 
-function validatePhoneNumber(phoneNumber) {
+const validatePhoneNumber = (phoneNumber) => {
   const re = /^\+7\d{10}$/;
   return re.test(String(phoneNumber));
-}
+};
 
-function handleSubmit(event) {
+const handleSubmit = (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -71,8 +71,8 @@ function handleSubmit(event) {
   .catch(error => {
     console.error('Ошибка:', error);
   });
-}
+};
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('form').reset();
 });
