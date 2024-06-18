@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Регистрация</h5>
+        <div data-container="sign-up">
+          <form data-form="sign-up" method="post" onsubmit="return handleSubmit(event)">
+            <div class="form-group">
+              <label for="first-name">Имя</label>
+              <input id="first-name" required type="text" class="form-control" name="first-name">
+              <div class="invalid-feedback" id="first-name-error">Введите имя</div>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Фамилия</label>
+              <input id="last-name" required type="text" class="form-control" name="last-name">
+              <div class="invalid-feedback" id="last-name-error">Введите фамилию</div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email<sup>*</sup></label>
+              <input id="email" required type="email" class="form-control" name="email">
+              <div class="invalid-feedback" id="email-error">Введите корректный email</div>
+            </div>
+            <div class="form-group">
+              <label for="phone-number">Телефон</label>
+              <input id="phone-number" type="tel" class="form-control" name="phone-number" placeholder="+71234567890">
+              <div class="invalid-feedback" id="phone-number-error">Введите корректный номер телефона (+7XXXXXXXXXX)</div>
+            </div>
+            <div class="form-group">
+              <textarea name="text" id="text" placeholder="Сообщение" class="form-control"></textarea>
+            </div>
+            <input id="form-button" type="submit" class="btn btn-primary" value="Отправить" disabled>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
